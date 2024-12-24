@@ -53,15 +53,13 @@ local parse_slides = function(lines)
         else
             table.insert(current_slide.body, line)
         end
-
-        table.insert(current_slide, line)
     end
     table.insert(slides.slides, current_slide)
 
     return slides
 end
 
----comment
+---Create default configurations for needed windows for presentation view
 ---@return table<string, vim.api.keyset.win_config>
 local create_window_configurations = function()
     local width = vim.o.columns
@@ -248,6 +246,8 @@ M.start_presentation = function(opts)
     set_slide_content(state.current_slide)
 end
 
-M.start_presentation({ bufnr = 20 })
+-- M.start_presentation({ bufnr = 20 })
+
+M._parse_slides = parse_slides
 
 return M
