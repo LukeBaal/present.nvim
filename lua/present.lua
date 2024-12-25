@@ -272,10 +272,12 @@ M.start_presentation = function(opts)
 		vim.api.nvim_open_win(buf, true, {
 			relative = "editor",
 			style = "minimal",
+			noautocmd = true,
 			width = temp_width,
 			height = temp_height,
 			row = math.floor((vim.o.lines - temp_height) / 2),
 			col = math.floor((vim.o.columns - temp_width) / 2),
+			border = "rounded",
 		})
 
 		vim.bo[buf].filetype = block.language
