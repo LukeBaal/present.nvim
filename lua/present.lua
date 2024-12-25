@@ -370,7 +370,7 @@ M.start_presentation = function(opts)
 	set_slide_content(state.current_slide)
 end
 
-M.start_presentation({ bufnr = 104 })
+-- M.start_presentation({ bufnr = 104 })
 
 -- Expose as private for use in unit tests
 M._parse_slides = parse_slides
